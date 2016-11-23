@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>咔嚓自拍馆</title>
+	<link rel="stylesheet" type="text/css" href="css/kacha.css">
+	<script type="text/javascript" src="js/setHomeSetFav.js" charset="gb2312"></script>
+	<script type="text/javascript" src="js/myfocus-2.0.1.min.js"></script>
+	<script type="text/javascript" src="js/mf-pattern/mF_YSlider.js"></script>
+	<link rel="stylesheet" type="text/css" href="js/mf-pattern/mF_YSlider.css">
+<script type="text/javascript"> 
+	myFocus.set({
+	id:'picBox',
+	pattern:'mF_shutters',
+	time:2,
+	textHeight:0	
+	}
+	);
+	myFocus.set({
+	id:'picBox_two'}
+	);
+        window.onload = function(){
+		 var logo=document.getElementById("logo_wrap");
+		 var logo_span=logo.getElementsByTagName("span");
+		 for(var i=0;i<logo_span.length;i++){
+	     	           	change(logo_span,i);
+		  	}
+		 logo_span[0].className="logo_main_visited"; 
+	}
+	 function change(obj,i){
+		obj[i].onmouseover=function(){
+		obj[0].className="logo_main";
+		obj[1].className="logo_main";
+		obj[2].className="logo_main";
+		obj[3].className="logo_main";
+		obj[i].className="logo_main_visited";	
+ 	}
+}
+</script> 
+
+</head>
+<body>
+	<div class="top">
+			<a>咔嚓自拍馆</a>
+	</div> <!-- top结束 -->
+	<div class="wrap">
+		<div class="logo" id="logo_wrap">
+			<span class="logo_main" id="test">作品展示</span> 
+			<span class="logo_main">视频观赏</span> 
+			<span class="logo_main">仪器介绍</span>
+			<span class="logo_main">联系方式</span>
+		</div><!-- logo结束 -->
+		<div class="main" id="main">
+			<div class="ad" id="picBox" >
+				<div class="loading"> <img src="images/loading.gif" alt="图片加载中"></div>
+				<div class="pic">
+					<ul>
+						<li><img src="images/ad2.jpg" /></li>
+						<li><img src="images/ad3.jpg" /></li>
+						<li><img src="images/ad4.jpg" /></li>
+					</ul>
+				</div>
+			</div><!-- ad结束 -->
+			<div class="ad" id="picBox_two" >
+				<div class="loading"> <img src="images/loading.gif" alt="图片加载中"></div>
+				<div class="pic">
+					<ul>
+						<li><img src="images/ad2.jpg" /></li>
+						<li><img src="images/ad3.jpg" /></li>
+						<li><img src="images/ad4.jpg" /></li>
+					</ul>
+				</div>
+			</div><!-- ad结束 -->
+		</div>
+	</div><!-- warp结束 -->
+</body>
+</html>

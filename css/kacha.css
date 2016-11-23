@@ -1,0 +1,68 @@
+*{
+	margin:0px;
+	padding:0px;
+	font-size:12px;	
+}
+
+.top{
+	height:40px;
+	background: url(../images/top_bg.jpg) ;
+	background-size:100% 100%;
+	vertical-align: center;
+}
+
+.top a{
+	font-family: "MicrosoftYaHei";
+	font-size: 18px;
+	color: #999;
+	padding-left:15px;
+	line-height:40px;
+	font-weight: bold;
+}
+.wrap{
+	width:100%;
+}
+.logo{
+	width:100%;
+	height:80px;
+	background:#e8e8e8;
+}
+.logo_main{
+	width: 25%;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: "MicrosoftYaHei";
+	color: #000;
+	float: left;
+	line-height: 80px;
+	text-align:center;
+	border-bottom: 2px solid #999;
+}
+.logo_main_visited{
+	width: 25%;
+	font-size: 25px;
+	font-weight: bold;
+	font-family: "MicrosoftYaHei";
+	float: left;
+	color:blue;
+	line-height: 80px;
+	text-align:center;
+	border-bottom: 4px solid #f00;
+}
+
+.main{
+	width: 1000px;
+	margin:0 auto;
+}
+
+.ad{
+	margin-top:100px;
+	width:98%;
+	height: 310px;
+	overflow: hidden;/*溢出隐藏*/
+}
+
+
+
+
+
