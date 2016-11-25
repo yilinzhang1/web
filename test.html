@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>咔嚓自拍馆</title>
+	<link rel="stylesheet" type="text/css" href="css/test.css">
+	<script type="text/javascript" src="js/setHomeSetFav.js" charset="gb2312"></script>
+	<script type="text/javascript" src="js/myfocus-2.0.1.min.js"></script>
+	<script type="text/javascript" src="js/mf-pattern/mF_YSlider.js"></script>
+	<link rel="stylesheet" type="text/css" href="js/mf-pattern/mF_YSlider.css">
+<script type="text/javascript"> 
+	myFocus.set({
+	id:'picBox',
+	time:2,
+	textHeight:0	
+	}
+	);
+	myFocus.set({
+	id:'picBox_two'}
+	);
+
+        window.onload = function(){
+		 var logo=document.getElementById("logo_wrap");
+		 var logo_li=logo.getElementsByTagName("span");
+		 for(var i=0;i<logo_li.length;i++){
+	     	           	change(logo_li,i);
+		  	}
+		 logo_li[0].style.borderBottom="2px solid #f00"; 
+	}
+	 function change(obj,i){
+		obj[i].onmouseover=function(){
+		obj[i].style.borderBottom="2px solid #f00";	
+		if(i!=0){
+			obj[0].style.borderBottom="2px solid #999"; 
+	        }
+		var li=obj[i].parentNode.getElementsByTagName("div")[0];
+	        if(i==0){
+			 li.className="show";        		
+		}
+ 		}
+		obj[i].onmouseout=function(){
+		obj[i].style.borderBottom="2px solid #999";
+		var li=obj[0].parentNode.getElementsByTagName("div")[0];
+			if(i!=0){
+				  	li.className="";       
+		}
+		}
+
+	}
+</script> 
+
+</head>
+<body>
+	<div class="top">
+			<a>咔嚓自拍馆</a>
+	</div> <!-- top结束 -->
+	<div class="wrap">
+		<div class="logo" id="logo_wrap">
+			<ul>
+				<li class="logo_main" id="test"><span><a href="#">作品展示</a></span>
+				    <div class="test_wrap">
+				    <div class="test">
+					<div class="ad" id="picBox" >
+						<div class="loading"> <img src="images/loading.gif" alt="图片加载中"></div>
+						<div class="pic">
+							<ul>
+								<li><img src="images/ad2.jpg" /></li>
+								<li><img src="images/ad3.jpg" /></li>
+								<li><img src="images/ad4.jpg" /></li>
+							</ul>
+						</div>
+					</div><!-- ad结束 -->
+					<div class="ad" id="picBox_two" >
+						<div class="loading"> <img src="images/loading.gif" alt="图片加载中"></div>
+						<div class="pic">
+							<ul>
+								<li><img src="images/ad2.jpg" /></li>
+								<li><img src="images/ad3.jpg" /></li>
+								<li><img src="images/ad4.jpg" /></li>
+							</ul>
+						</div>
+					</div><!-- ad结束 -->
+				    </div>
+				    </div>
+				</li> 
+				<li class="logo_main"><span><a href="#">作品展示</a></li> 
+				<li class="logo_main"><span><a href="#">作品展示</a></li>
+				<li class="logo_main"><span><a href="#">作品展示</a></li>
+			</ul>
+		</div><!-- logo结束 -->
+		<div class="main" id="main">
+
+		</div>
+	</div><!-- warp结束 -->
+</body>
+</html>

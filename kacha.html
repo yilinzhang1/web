@@ -19,20 +19,20 @@
 	myFocus.set({
 	id:'picBox_two'}
 	);
+	logo_seleted=0;
         window.onload = function(){
 		 var logo=document.getElementById("logo_wrap");
 		 var logo_span=logo.getElementsByTagName("span");
 		 for(var i=0;i<logo_span.length;i++){
 	     	           	change(logo_span,i);
 		  	}
-		 logo_span[0].className="logo_main_visited"; 
+		 logo_span[logo_seleted].className="logo_main_visited" 
 	}
 	 function change(obj,i){
 		obj[i].onmouseover=function(){
-		obj[0].className="logo_main";
-		obj[1].className="logo_main";
-		obj[2].className="logo_main";
-		obj[3].className="logo_main";
+                obj[logo_seleted].className="logo_main"; 
+                obj[i].className="logo_main_visited";
+                logo_seleted=i;
 		obj[i].className="logo_main_visited";	
  	}
 }
