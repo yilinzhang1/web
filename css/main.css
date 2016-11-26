@@ -269,3 +269,18 @@ body{
 	margin:0px  15px;
 	text-align: center;
 }
+
+.vedio{
+	height: 185px;
+	border: 1px solid #e8e8e8;
+}
+
+.vedio_content{
+	height: 150px;
+}
+
+.sidebar_ad{
+	height: 55px;
+	border: 1px solid  #e8e8e8;
+	margin-top: 10px;
+}

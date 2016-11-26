@@ -8,7 +8,15 @@
 	<script type="text/javascript" src="js/myfocus-2.0.1.min.js"></script>
 	<script type="text/javascript" src="js/mf-pattern/mF_YSlider.js"></script>
 	<link rel="stylesheet" type="text/css" href="js/mf-pattern/mF_YSlider.css">
+	<link href="video-js/video-js.css" rel="stylesheet" type="text/css">
+	<script src="video-js/video.js"></script>
+	   
+
 <script type="text/javascript"> 
+	videojs.options.flash.swf = "video-js/video-js.swf";
+    if (navigator.userAgent.indexOf('MSIE') >= 0){
+        document.getElementById("videoDiv").innerHTML='<embed src="video-js/[Airota][Kabaneri of the Iron fortress][03][1280x720][x264_AAC][CHT].mp4" autostart="true" loop="true" width="100%" height="100%" >';
+    }
 	myFocus.set({
 	id:'picBox',
 	pattern:'mF_shutters',
@@ -19,22 +27,47 @@
 	myFocus.set({
 	id:'picBox_two'}
 	);
+	logo_number=0;
         window.onload = function(){
 		 var logo=document.getElementById("logo_wrap");
 		 var logo_span=logo.getElementsByTagName("span");
+		 var viedoDiv=document.getElementById("videoDiv");
+		 var video=videojs('video_test');
+		 var work=document.getElementById("production");
 		 for(var i=0;i<logo_span.length;i++){
-	     	           	change(logo_span,i);
+	     	           	change(logo_span,i,viedoDiv,video,work);
 		  	}
-		 logo_span[0].className="logo_main_visited"; 
-	}
-	 function change(obj,i){
+		 logo_span[logo_number].className="logo_main_visited"; 
+		 videoDiv.style.display="none";
+	};
+	 function change(obj,i,videoDiv,video,work){
 		obj[i].onmouseover=function(){
-		obj[0].className="logo_main";
-		obj[1].className="logo_main";
-		obj[2].className="logo_main";
-		obj[3].className="logo_main";
-		obj[i].className="logo_main_visited";	
- 	}
+		obj[logo_number].className="";
+		obj[i].className="logo_main_visited";
+		logo_number=i;
+
+		switch(logo_number){
+			case (0):
+				videoDiv.style.display="none";
+				work.style.display="block";
+				video.pause();
+				break;
+			case (1):
+				videoDiv.style.display="block";
+				work.style.display="none";
+				break;
+			case (2):
+				work.style.display="none";
+				videoDiv.style.display="none";
+				video.pause();
+				break;
+			case (3):
+				work.style.display="none";
+				videoDiv.style.display="none";
+				video.pause();
+				break;
+		}
+ 	};
 }
 </script> 
 
@@ -44,13 +77,16 @@
 			<a>咔嚓自拍馆</a>
 	</div> <!-- top结束 -->
 	<div class="wrap">
-		<div class="logo" id="logo_wrap">
-			<span class="logo_main" id="test">作品展示</span> 
-			<span class="logo_main">视频观赏</span> 
-			<span class="logo_main">仪器介绍</span>
-			<span class="logo_main">联系方式</span>
+		<div class="logo" >
+			<div id="logo_wrap">
+			<span ><a href="#">作品展示</a></span> 
+			<span ><a href="#">视频观赏</a></span> 
+			<span ><a href="#">仪器介绍</a></span>
+			<span ><a href="#">联系方式</a></span>
+			</div>
 		</div><!-- logo结束 -->
 		<div class="main" id="main">
+			<div class="work" id="production">
 			<div class="ad" id="picBox" >
 				<div class="loading"> <img src="images/loading.gif" alt="图片加载中"></div>
 				<div class="pic">
@@ -71,7 +107,15 @@
 					</ul>
 				</div>
 			</div><!-- ad结束 -->
-		</div>
+			</div>
+			<div class="my_video" id="videoDiv">
+			<video id="video_test" class="video-js vjs-default-skin vjs-big-play-centered"  
+				controls preload="auto" width="100%" height="100%"
+				poster="img/pure-black.jpg" data-setup=''>
+				<source src="video-js/[Airota][Kabaneri of the Iron fortress][03][1280x720][x264_AAC][CHT].mp4" type='video/mp4' />
+			</video>  
+			</div>
+		</div><!-- main结束 -->
 	</div><!-- warp结束 -->
 </body>
 </html>
