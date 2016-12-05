@@ -18,34 +18,28 @@
 	myFocus.set({
 	id:'picBox_two'}
 	);
-
+        var logo_seleted=0;
         window.onload = function(){
 		 var logo=document.getElementById("logo_wrap");
 		 var logo_li=logo.getElementsByTagName("span");
 		 for(var i=0;i<logo_li.length;i++){
 	     	           	change(logo_li,i);
 		  	}
-		 logo_li[0].style.borderBottom="2px solid #f00"; 
+		 init(logo_li);
 	}
 	 function change(obj,i){
-		obj[i].onmouseover=function(){
-		obj[i].style.borderBottom="2px solid #f00";	
-		if(i!=0){
-			obj[0].style.borderBottom="2px solid #999"; 
-	        }
-		var li=obj[i].parentNode.getElementsByTagName("div")[0];
-	        if(i==0){
-			 li.className="show";        		
-		}
+		obj[i].onmouseover=function(){	
+		obj[logo_seleted].className="logo_main";
+		logo_seleted=i;
+		obj[logo_seleted].className="logo_main_visited";
+		
  		}
-		obj[i].onmouseout=function(){
-		obj[i].style.borderBottom="2px solid #999";
-		var li=obj[0].parentNode.getElementsByTagName("div")[0];
-			if(i!=0){
-				  	li.className="";       
-		}
-		}
 
+
+	}
+	function init(obj){
+		 obj[logo_seleted].className="logo_main_visited"; 
+		 obj[logo_seleted].parentNode.getElementsByTagName("div")[0].className="show";		
 	}
 </script> 
 
@@ -58,7 +52,6 @@
 		<div class="logo" id="logo_wrap">
 			<ul>
 				<li class="logo_main" id="test"><span><a href="#">作品展示</a></span>
-				    <div class="test_wrap">
 				    <div class="test">
 					<div class="ad" id="picBox" >
 						<div class="loading"> <img src="images/loading.gif" alt="图片加载中"></div>
@@ -80,7 +73,6 @@
 							</ul>
 						</div>
 					</div><!-- ad结束 -->
-				    </div>
 				    </div>
 				</li> 
 				<li class="logo_main"><span><a href="#">作品展示</a></li> 
