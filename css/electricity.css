@@ -21,7 +21,7 @@
 	font-weight: bold;
 }
 .topBar a:hover{
-	color: #f00;
+	color: #f00;1
 }
 
 /*logo*/
@@ -85,4 +85,135 @@
 	background:url(../images/icons/shopNum.gif) 33px center no-repeat;
 	text-align: right;
 	padding-right: 29px;
+}
+
+/*导航*/
+.navBox{
+	height: 35px;
+	background-color: #1369c0;
+	color: #fff;
+}
+.shopClass{
+	width: 190px;
+	position: relative;
+}
+.shopClass i{
+	width: 11px;
+	height: 7px;
+	overflow: hidden;
+	background:url(../images/icons/down.gif) left center no-repeat;
+	display: inline-block;
+	margin-left: 11px;
+}
+.shopClass h3{
+	text-align: center;
+	line-height: 35px;
+}
+.nav{
+	line-height: 35px;
+}
+
+.nav li{
+	float: left;
+}
+.nav a{
+	height: 35px;
+	display: inline-block;
+	padding:0 35px;
+	color: #fff;
+}
+.nav .active{
+	background-color: #4593fd;
+}
+.nav ,.shopClass{
+	font-family: "MicrosoftYaHei";
+}
+
+/*商品弹出列表*/
+.shopClass_show{
+	background-color: #4593fd;
+	position: absolute;
+	left: 0;
+	top: 35px;
+	width: 100%;
+}
+.shopClass_item dt{
+	height: 22px;
+	background:;
+}
+.shopClass_item a{
+	color: #fff;
+}
+.shopClass_item{
+	padding:14px 10px;
+	border-bottom: #3487F2 solid 1px;
+	border-top: #5aa1fe solid 1px;
+}
+.shopClass_item .aLink{
+	width: 48px;
+	height: 20px;
+	background:url(../images/icons/aLink.png) left center no-repeat;
+	display: inline-block;
+	text-align: center;
+	line-height: 20px;
+	text-decoration: underline;
+}
+.shopClass_item .b{
+/*	font-family: "MicrosoftYaHei";
+	font-size: 14px;
+	font-weight: bold;*/
+	font:14px/1 "MicrosoftYaHei","微软雅黑";
+}
+/*弹出的菜单*/
+.shopClass_list{
+	width: 568px;
+	height: 378px;
+	border: #ccc solid 2px;
+	position: absolute;
+	left: 190px;
+	top: 35px;
+	display: none;
+	background-color: red;
+}
+/*banner部分*/
+.banner_bar{
+	width: 810px;
+	height: 326px;
+	float: right;
+	overflow: hidden;
+	position: relative;
+}
+.imgBox{
+	width: 1620px;
+	height: 326px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.imgBox li{
+	float: left;
+}
+.imgBox img{
+	width: 810px;
+	height: 326px;
+	display: block;
+}
+.imgNum{
+	position: absolute;
+	left: 0px;
+	bottom: 15px;
+	width: 100%;
+	text-align: center;
+}
+.imgNum a{
+	width: 20px;
+	height: 5px;
+	overflow: hidden;
+	background-color: red;
+	display: inline-block;
+	margin:0 3px;
+}
+
+.imgNum .active{
+	background-color: #ff7700;
 }
