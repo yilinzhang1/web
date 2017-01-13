@@ -37,21 +37,9 @@
 	font-size: 14px;
 	border-bottom: 2px solid #999;
 	text-align:center;
-	background: url(../images/news2.jpg) no-repeat right center;
-}
-
-.logo a{
-	font-size: 23px;
-	font-weight: bold;
-	line-height: 50px;
-	text-align:center;
-	text-decoration:none;
-	font-family: "MicrosoftYaHei";
-	border-bottom: 2px solid #999;
-	text-align:center;
+	line-height:50px;
 	background: url(../images/line.png) no-repeat right center;
 }
-
 
 
 .logo .logo_main_visited{
@@ -68,7 +56,6 @@
 .main{
 	width: 100%;
 	margin:0 auto;
-	padding-left: 200px;
 	margin-top: 100px;
 }
 
