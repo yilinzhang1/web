@@ -19,6 +19,7 @@
 	line-height:25px;
 	font-weight: bold;
 }
+
 .wrap{
 	width:100%;
 }
@@ -29,10 +30,18 @@
 	height:50px;
 	background:#e8e8e8;
 }
+
 .logo  span{
 	width: 25%;
 	float: left;
 	font-size: 14px;
+	border-bottom: 2px solid #999;
+	text-align:center;
+	background: url(../images/news2.jpg) no-repeat right center;
+}
+
+.logo a{
+	font-size: 23px;
 	font-weight: bold;
 	line-height: 50px;
 	text-align:center;
@@ -51,19 +60,24 @@
 	color:blue;
 }
 
-
+.logo .logo_main_visited a{
+	font-size: 28px;
+}
 
 
 .main{
 	width: 100%;
 	margin:0 auto;
+	padding-left: 200px;
 	margin-top: 100px;
 }
 
 .work{
-	width: 1000px;
+	width: 800px;
 	margin:0 auto;
 }
+
+
 .ad{
 	margin:0 auto;
 	margin-top:100px;
