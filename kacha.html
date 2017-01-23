@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<title>咔嚓自拍馆</title>
+	<title>CLID</title>
 	<link rel="stylesheet" type="text/css" href="css/kacha.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<script type="text/javascript" src="js/setHomeSetFav.js" charset="gb2312"></script>
 	<script type="text/javascript" src="js/myfocus-2.0.1.min.js"></script>
 	<script type="text/javascript" src="js/mf-pattern/mF_YSlider.js"></script>
 	<link rel="stylesheet" type="text/css" href="js/mf-pattern/mF_YSlider.css">
 	<link href="video-js/video-js.css" rel="stylesheet" type="text/css">
 	<script src="video-js/video.js"></script>
+	<script src="js/perfectFramwork.js"></script>
 	<script type="text/javascript" src=js/event-utility.js></script>
 	   
 
@@ -18,15 +21,18 @@
     if (navigator.userAgent.indexOf('MSIE') >= 0){
         document.getElementById("videoDiv").innerHTML='<embed src="video-js/[Airota][Kabaneri of the Iron fortress][03][1280x720][x264_AAC][CHT].mp4" autostart="true" loop="true" width="100%" height="100%" >';
     }
+
+	/*myFocus.set({
+	id:'picBox_two'}
+	);*/
 	myFocus.set({
 	id:'picBox',
-	pattern:'mF_shutters',
+	//pattern:'mF_shutters',
+	height:310,
+	width: 780,
 	time:2,
 	textHeight:0	
 	}
-	);
-	myFocus.set({
-	id:'picBox_two'}
 	);
 
 </script> 
@@ -36,7 +42,7 @@
 	<div class="top">
 			<a>咔嚓自拍馆</a>
 	</div> <!-- top结束 -->
-	<div class="wrap">
+	<div class="wrap" id="wrap">
 		<div class="logo" >
 			<div id="logo_wrap">
 			<span >作品展示</span> 
@@ -47,29 +53,78 @@
 		</div><!-- logo结束 -->
 		<div class="main" id="main">
 			<div name="mainlist" class="mainlist_item_show">
-				<div class="work" id="production">
+				<div id=Species>
+					<div  id="photoSpecies" >
+						<dl class="photoSpecies_item clearfix">
+							<dt class="fl">
+								<a href="#" >剑三</a>
+							</dt>
+
+						</dl>
+						<dl class="photoSpecies_item clearfix">
+							<dt class="fl">
+								<a href="#" >日常</a>
+							</dt>
+
+						</dl>
+						<dl class="photoSpecies_item clearfix">
+							<dt class="fl">
+								<a href="#" >COS</a>
+							</dt>
+						</dl>
+						<dl class="photoSpecies_item clearfix">
+							<dt class="fl">
+								<a href="#" >CP</a>
+							</dt>
+
+						</dl>
+						<dl class="photoSpecies_item clearfix ">
+							<dt class="fl photoSpecies_dd_bottom">
+								<a href="#" >TCL</a>
+							</dt>
+
+						</dl>
+					</div><!-- photoSpecies结束 -->
+					<div class="photoSpecies_species" clearfix id="photoSpecies_species" >
+						<!--<dt >
+							<a href="#" >Tcl</a>
+							<a href="#" >Tcl</a>
+							<a href="#" >Tcl</a>							
+						</dt>
+						<dt >
+							<a href="#" >Tcl</a>
+							<a href="#" >Tcl</a>
+							<a href="#" >Tcl</a>							
+						</dt>
+						<dt >
+							<a href="#" >Tcl</a>
+							<a href="#" >Tcl</a>							
+						</dt>-->
+					</div>
+				</div><!-- Species结束 -->
+				<div class="work clearfix" id="production">
 					<div class="ad" id="picBox" >
 						<div class="loading"> <img src="images/loading.gif" alt="图片加载中"></div>
 						<div class="pic">
 							<ul>
-								<li><img src="images/ad2.jpg" /></li>
+								<li><img id ="pixBox_li1" src="images/ad2.jpg" /></li>
 								<li><img src="images/ad3.jpg" /></li>
 								<li><img src="images/ad4.jpg" /></li>
-							</ul>
+							</ul> 
 						</div>
 					</div><!-- ad结束 -->
-					<div class="ad" id="picBox_two" >
+					<!--<div class="ad" id="picBox_two" >
 						<div class="loading"> <img src="images/loading.gif" alt="图片加载中"></div>
 						<div class="pic">
 							<ul>
 								<li><img src="images/ad2.jpg" /></li>
 								<li><img src="images/ad3.jpg" /></li>
-								<li><img src="images/ad4.jpg" /></li>
+								<li><img src="	images/ad4.jpg" /></li>
 							</ul>
-						</div>
+						</div>-->
 					</div><!-- ad结束 -->
 				</div>
-			</div>
+			</div><!-- mainlist_item结束 -->
 
 			<div name="mainlist" class="mainlist_item">
 				<div class="my_video" id="videoDiv">
@@ -79,37 +134,184 @@
 						<source src="video-js/[Airota][Kabaneri of the Iron fortress][03][1280x720][x264_AAC][CHT].mp4" type='video/mp4' />
 					</video>  
 				</div>
-			<div class="my_video" id="videoDiv">
-			<video id="video_test" class="video-js vjs-default-skin vjs-big-play-centered"  
-				controls preload="auto" width="100%" height="100%"
-				poster="img/pure-black.jpg" data-setup=''>
-				<source src="[Airota][Kabaneri of the Iron fortress][03][1280x720][x264_AAC][CHT].mp4" type='video/mp4' />
-			</video>  
-			</div>
-			<div name="mainlist" class="mainlist_item"></div>
-			<div name="mainlist" class="mainlist_item"></div>
+			</div><!-- mainlist_item结束 -->
+			<div name="mainlist" class="mainlist_item">
+				<div class="instrument" id="instrument">
+					<div class="instrument_item clearfix">
+						<div class="instrument_left fl" name="instrument_left">
+							<div class="instrument_photo fl">
+								<img src="images/01.jpg" />
+							</div>
+							<div class="instrument_test fl">
+								<h2>M2000相机</h2>
+								<p>单反就是指单镜头反光，即SLR(Single Lens Reflex)，这是当今最流行的取景系统，大多数35mm照相机都采用这种取景器。在这种系统中，反光镜和棱镜的独到设计使得摄影者可以从取景器中直接观察到通过镜头的影像。因此，可以准确地看见胶片即将“看见”的相同影像。该系统的心脏是一块活动的反光镜(如图浅蓝色部分)，它呈45°角安放在胶片平面的前面。进入镜头的光线由反光镜向上反射到一块毛玻璃上。早期的SLR照相机必须以腰平的方式把握照相机并俯视毛玻璃取景
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="instrument_item clearfix">
+						<div class="instrument_left fl" name="instrument_left">
+							<div class="instrument_photo fl">
+								<img src="images/01.jpg" />
+							</div>
+							<div class="instrument_test fl">
+								<h2>M2000相机</h2>
+								<p>单反就是指单镜头反光，即SLR(Single Lens Reflex)，这是当今最流行的取景系统，大多数35mm照相机都采用这种取景器。在这种系统中，反光镜和棱镜的独到设计使得摄影者可以从取景器中直接观察到通过镜头的影像。因此，可以准确地看见胶片即将“看见”的相同影像。该系统的心脏是一块活动的反光镜(如图浅蓝色部分)，它呈45°角安放在胶片平面的前面。进入镜头的光线由反光镜向上反射到一块毛玻璃上。早期的SLR照相机必须以腰平的方式把握照相机并俯视毛玻璃取景
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="instrument_item clearfix">
+						<div class="instrument_left fl" name="instrument_left">
+							<div class="instrument_photo fl">
+								<img src="images/01.jpg" />
+							</div>
+							<div class="instrument_test fl">
+								<h2>M2000相机</h2>
+								<p>单反就是指单镜头反光，即SLR(Single Lens Reflex)，这是当今最流行的取景系统，大多数35mm照相机都采用这种取景器。在这种系统中，反光镜和棱镜的独到设计使得摄影者可以从取景器中直接观察到通过镜头的影像。因此，可以准确地看见胶片即将“看见”的相同影像。该系统的心脏是一块活动的反光镜(如图浅蓝色部分)，它呈45°角安放在胶片平面的前面。进入镜头的光线由反光镜向上反射到一块毛玻璃上。早期的SLR照相机必须以腰平的方式把握照相机并俯视毛玻璃取景
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- mainlist_item结束 -->
+			<div name="mainlist" class="mainlist_item">
+			</div><!-- mainlist_item结束 -->
 		</div><!-- main结束 -->
 	</div><!-- warp结束 -->
+
 </body>
 <script>
-	 logo_number=0;
-         var global={logo_number:0,}
-	 var logo=document.getElementById("logo_wrap");
-	 var logo_span=logo.getElementsByTagName("span");
-	 var main_list=document.getElementsByName("mainlist");
-	 var viedoDiv=document.getElementById("videoDiv");
-	 var video=videojs('video_test');
-	 var work=document.getElementById("production");
-	 for(var i=0;i<logo_span.length;i++){
-     	           	//change(logo_span,i,viedoDiv,video,work);
+	var wrap=document.getElementById("wrap");
+	var logo_number=0;
+	var logo=document.getElementById("logo_wrap");
+	var logo_span=logo.getElementsByTagName("span");
+	var main_list=document.getElementsByName("mainlist");
+	var viedoDiv=document.getElementById("videoDiv");
+	var video=videojs('video_test');
+	var production=document.getElementById("production");
+	var species=document.getElementById("Species");
+	var photoSpecies=document.getElementById("photoSpecies");
+	var photoSpecies_dt=photoSpecies.getElementsByTagName("dt");
+	var photoSpecies_dd=photoSpecies.getElementsByTagName("dd");
+	var photoSpecies_species=document.getElementById("photoSpecies_species");
+	var photoSpecies_select;
+	var photoSpecies_data=[];
+	var instrument_left=document.getElementsByName("instrument_left");
+	var instrument_right=document.getElementsByName("instrument_right");
+	var instrument=document.getElementById("instrument");
+	var instrumentFlag;
+	main();
+	function main(){
+		init();
+		getWindowHeight();
+		logo_span[logo_number].className="logo_main_visited"; 
+		for(var i=0;i<logo_span.length;i++){
+		   	//change(logo_span,i,viedoDiv,video,production);
 			evt.addListener(logo_span[i],"mouseover",eventChange);
-	  	}
-	 logo_span[logo_number].className="logo_main_visited"; 
-	 function eventChange(e){
-		e.stopPropagation();
+		}
+		for(var i=0;i<photoSpecies_dt.length;i++){
+		   	//change(logo_span,i,viedoDiv,video,production);
+			evt.addListener(photoSpecies_dt[i],"mouseover",showPhotoSpeciesDt);
+		}
+		evt.addListener(species,"mouseover",deletePhotoSpecies);
+		evt.addListener(species,"mouseoout",deletePhotoSpecies);
+		//for(var i=0;i<instrument_left.length;i++){
+		//	evt.addListener(instrument_left[i],"mouseover",instrumentMoveRight);
+		//	evt.addListener(instrument_left[i],"mouseout",instrumentMoveLeft);
+		//}
+		evt.addListener(instrument,"mouseover",instrumentMoveRight);
+	}
+	function init(){
+		photoSpecies_data[0]=[];
+		photoSpecies_data[1]=[];
+		photoSpecies_data[2]=[];
+		photoSpecies_data[3]=[];
+		photoSpecies_data[4]=[];
+		photoSpecies_data[0][0]="藏剑";
+		photoSpecies_data[0][1]="天策";
+		photoSpecies_data[0][2]="万花";
+		photoSpecies_data[0][3]="毒姐";
+		photoSpecies_data[0][4]="秀萝";
+		photoSpecies_data[0][5]="和尚";
+		photoSpecies_data[0][6]="七秀";
+		photoSpecies_data[0][7]="二小姐";
+		photoSpecies_data[1][0]="TCL";
+		photoSpecies_data[1][1]="华为";
+		photoSpecies_data[1][2]="小米";
+		photoSpecies_data[1][3]="？？？";
+		photoSpecies_data[1][4]="秀萝";
+		photoSpecies_data[1][5]="和尚";
+		photoSpecies_data[1][6]="七秀";
+		photoSpecies_data[1][7]="二小姐";
+		photoSpecies_data[2][0]="藏剑";
+		photoSpecies_data[2][1]="天策";
+		photoSpecies_data[2][2]="万花";
+		photoSpecies_data[2][3]="毒姐";
+		photoSpecies_data[2][4]="秀萝";
+		photoSpecies_data[2][5]="和尚";
+		photoSpecies_data[2][6]="七秀";
+		photoSpecies_data[2][7]="二小姐";
+		photoSpecies_data[3][0]="藏剑";
+		photoSpecies_data[3][1]="天策";
+		photoSpecies_data[3][2]="万花";
+		photoSpecies_data[3][3]="毒姐";
+		photoSpecies_data[3][4]="秀萝";
+		photoSpecies_data[3][5]="和尚";
+		photoSpecies_data[3][6]="七秀";
+		photoSpecies_data[3][7]="二小姐";
+		photoSpecies_data[4][0]="藏剑";
+		photoSpecies_data[4][1]="天策";
+		photoSpecies_data[4][2]="万花";
+		photoSpecies_data[4][3]="毒姐";
+		photoSpecies_data[4][4]="秀萝";
+		photoSpecies_data[4][5]="和尚";
+		photoSpecies_data[4][6]="七秀";
+		photoSpecies_data[4][7]="二小姐";
+	}
+	function getWindowHeight(){
+        	var url=evt.getStyle(wrap).backgroundImage;
+		wrap.style.height=document.body.scrollHeight-30+"px";
+		wrap.style.width=window.screen.availWidth+"px";
+		var i=0;
+		wrap.timer=setInterval(function(){
+			var wrapBackgroud=[];
+		            wrapBackgroud[0]="bz0.jpg";
+		            wrapBackgroud[1]="bz1.jpg";
+			    wrapBackgroud[2]="bz2.jpg";
+		            wrapBackgroud[3]="bz3.jpg";
+			url=url.slice(0,url.length-9)+wrapBackgroud[i]+"\")";
+			wrap.style.backgroundImage=""+url;
+			i++;
+		        if(i==4)
+				i=0;
+			
+		},2000);
+	}
+	/*
+	function screenInfo(){
+	    var  s = "";
+	   s += "\r\n网页可见区域宽："+ document.body.clientWidth;
+	   s += "\r\n网页可见区域高："+ document.body.clientHeight;
+	   s += "\r\n网页可见区域宽："+ document.body.offsetWidth  +" (包括边线的宽)";
+	   s += "\r\n网页可见区域高："+ document.body.offsetHeight +" (包括边线的宽)";
+	   s += "\r\n网页正文全文宽："+ document.body.scrollWidth;
+	   s += "\r\n网页正文全文高："+ document.body.scrollHeight;
+	   s += "\r\n网页被卷去的高："+ document.body.scrollTop;
+	   s += "\r\n网页被卷去的左："+ document.body.scrollLeft;
+	   s += "\r\n网页正文部分上："+ window.screenTop;
+	   s += "\r\n网页正文部分左："+ window.screenLeft;
+	   s += "\r\n屏幕分辨率的高："+ window.screen.height;
+	   s += "\r\n屏幕分辨率的宽："+ window.screen.width;
+	   s += "\r\n屏幕可用工作区高度："+ window.screen.availHeight;
+	   s += "\r\n屏幕可用工作区宽度："+ window.screen.availWidth;
+	   alert(s);
+	}*/
+	function eventChange(e){
+		evt.stopBubble(e);
 		var ele=evt.getTarget(e);
 		evt.preventDefault(e);
-		var i = getChildrenIndex(ele);
+		var i = evt.getChildrenIndex(ele);
 		logo_span[logo_number].className="";
 		ele.className="logo_main_visited";
 		main_list[logo_number].className="mainlist_item";
@@ -130,17 +332,110 @@
 				break;
 			};		
 	}
-	function getChildrenIndex(ele){
-	//IE is simplest and fastest
-	if(ele.sourceIndex){
-	return ele.sourceIndex - ele.parentNode.sourceIndex - 1;
+
+	function changePicBox(e){
+		evt.stopBubble(e);
+		var elePhotoName=evt.getTarget(e).innerHTML;
+		var pixBox_li1=document.getElementById("pixBox_li1");
+		production.style.display="block";
+		var x,y;
+		for (i=0;i<photoSpecies_data.length;i++){
+			for(j=0;j<photoSpecies_data[i].length;j++){
+				if(elePhotoName==photoSpecies_data[i][j]){
+					x=i;
+					y=j;
+					break;
+				}
+			}
+			if(typeof(x)!='undefined'){break;}
+		}
+		
+		if(""+x+y+".jpg"===pixBox_li1.src.split("/")[(pixBox_li1.src.split("/").length-1)]){
+			return;
+		}
+		pixBox_li1.src="images/"+x+y+".jpg";
+
 	}
-	//other browsers
-	var i=0;
-	while(ele = ele.previousElementSibling){
-	i++;
+	function showPhotoSpeciesDt(e){
+		evt.stopBubble(e);
+		var ele=evt.getTarget(e).parentNode;
+		if (ele.nodeName=="DT"){
+			return;
+		}
+	        var dt=photoSpecies_species.getElementsByTagName("dt");
+		var j=dt.length;
+		if (j!=0){
+			for(i=j-1;i>=0;i--){
+				photoSpecies_species.removeChild(dt[i]);
+			}
+		}
+		var i = evt.getChildrenIndex(ele);
+		ele=photoSpecies_species.getElementsByTagName("a");
+		//var value=ele[i].innerHTML;
+		var len =Math.ceil(photoSpecies_data[i].length/3);
+		for(k=0;k<len;k++){
+			var dt = document.createElement("dt");
+			if(k==len-1)
+				dt.style.borderBottom="#5aa1fe solid 1px";
+			photoSpecies_species.appendChild(dt);
+			for(j=0;j<3;j++){
+				var a = document.createElement("a");
+				a.setAttribute("href","#");
+				if (k*3+j<photoSpecies_data[i].length){
+					a.innerHTML=photoSpecies_data[i][k*3+j];
+					dt.appendChild(a);
+				}
+				evt.addListener(a,"click",changePicBox);
+			}
+		}
 	}
-	return i;
-	} 
+	function deletePhotoSpecies(e){
+		evt.stopBubble(e);
+		var ele=evt.getTarget(e);
+		if(ele.nodeName!="DIV"){
+			return;
+		}
+		var dt=photoSpecies_species.getElementsByTagName("dt");
+		var j=dt.length;
+		//x=event.clientX;
+		//y=event.clientY;
+		if (j!=0){
+			for(i=j-1;i>=0;i--){
+				photoSpecies_species.removeChild(dt[i]);
+			}
+		}
+	}
+	function instrumentMoveRight(e){
+		evt.stopBubble(e);
+		var ele=evt.getTarget(e);
+		var i;
+		var bottomMove;
+		if(ele.nodeName=="IMG" || ele.nodeName=="H2" || ele.nodeName=="P" ){
+			i=evt.getChildrenIndex(ele.parentNode.parentNode.parentNode);
+			instrumentFlag=i;
+			bottoMove={width:800};
+			startMove(instrument_left[i],bottoMove);
+		}else if(ele.nodeName=="DIV"){
+			i=evt.getChildrenIndex(ele);
+			bottoMove={width:201};
+			startMove(instrument_left[instrumentFlag],bottoMove);			
+		}else
+			return;
+	}
+
+	/*function deletePhotoSpeciesSpeciesDt(){
+		evt.stopBubble(e);
+		var dt=this.getElementsByTagName("dt");
+		var j=dt.length;
+		event = event||window.event;
+		x=event.clientX;
+		y=event.clientY;
+		if (j!=0 && (x-evt.pageX(this)<0 || x-evt.pageX(this)> this.offsetWidth-1 || y-evt.pageY(this)<0 || y-evt.pageY(this)>this.offsetHeight-1)){
+			for(i=j-1;i>=0;i--){
+				this.removeChild(dt[i]);
+			}
+		}
+	}*/
 </script>
 </html>
+

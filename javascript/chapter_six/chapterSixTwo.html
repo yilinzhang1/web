@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Chapter 6,Example 2></title>
+</head>
+<body>
+        <script>
+		var myString = "Paul,Paula,Pauline,paul,Paul";
+		var myRegExp=/Paul/gi; //正则表达式以/开头结尾并且gi 忽略大小写，并且全局，若不加gi，完全匹配并且匹配第一个。
+		myString=myString.replace(myRegExp,"Ringo");
+		alert (myString);
+		var input=prompt("Please enter a pass phrase","");
+		function isValid(text){
+			var myRegExp=/[^a-z\d ]/i;
+			return !(myRegExp.test(text));
+		}
+		if(isValid(input)){
+			alert("Your passphrase contains only valid characters");
+		}else{
+			alert("Your passphrase contains one or more invalid characters");
+		}
+        </script>
+</body>
+</html>

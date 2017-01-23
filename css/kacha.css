@@ -2,11 +2,12 @@
 	margin:0px;
 	padding:0px;
 	font-size:12px;	
+
 }
 
 .top{
-	height:25px;
-	background: url(../images/top_bg.jpg) ;
+	height:30px;
+	background:url(../images/top_bg.jpg);
 	background-size:100% 100%;
 	vertical-align: center;
 }
@@ -16,18 +17,20 @@
 	font-size: 10px;
 	color: #999;
 	padding-left:15px;
-	line-height:25px;
+	line-height:30px;
 	font-weight: bold;
 }
 
 .wrap{
-	width:100%;
+	background-image:url(../images/bz2.jpg);
+	background-attachment:fixed;
+
 }
 
 .logo{
 	width:1000px;
 	margin:0 auto;
-	height:50px;
+	height:60px;
 	background:#e8e8e8;
 }
 
@@ -37,7 +40,7 @@
 	font-size: 14px;
 	border-bottom: 2px solid #999;
 	text-align:center;
-	line-height:50px;
+	line-height:60px;
 	background: url(../images/line.png) no-repeat right center;
 }
 
@@ -56,29 +59,28 @@
 .main{
 	width: 100%;
 	margin:0 auto;
-	margin-top: 100px;
+	margin-top: 10px;
 }
 
 .work{
+	display:none;
 	width: 800px;
 	margin:0 auto;
 }
 
 
 .ad{
-	margin:0 auto;
 	margin-top:100px;
-	width:98%;
+	width:780px;
 	height: 310px;
 	overflow: hidden;/*溢出隐藏*/
 	margin-bottom: 100px;
 }
 
 .my_video{
-	margin-top: 300px;
 	width: 900px;
-	height: 600px;
-	margin:0 auto;
+	height: 500px;
+	margin:70px auto;
 	background: #f00;
 }
 
@@ -90,3 +92,124 @@
 	display:block;
 }
 
+.bottom{
+	width:300px;
+	height:40px;
+	background:blue;
+	position: fixed;
+	left:10px;
+	bottom:0px;
+}
+#Species{
+	position:absolute;
+	display:inline-block;
+	left:10px;
+	top:99px;
+	padding:10px;
+}
+#photoSpecies{
+        float:left;
+	padding:1px 0px 1px 1px;
+}
+.photoSpecies_item{
+	height:35px;
+}
+.photoSpecies_item a{
+	line-height:34px;
+	width:100%;
+	color:#fff;
+	font-family: "MicrosoftYaHei","微软雅黑";
+}
+.photoSpecies_item dt{
+	width:48px;
+	height:34px;
+	text-align: center;
+	border-top:#5aa1fe solid 1px;
+	border-left:#5aa1fe solid 1px;
+	border-right:#5aa1fe solid 1px;
+}
+/*
+.photoSpecies_item dd{
+	display:none;
+	padding-left:10px;
+	text-align: center;
+	height:34px;
+}*/
+.photoSpecies_dd_bottom{
+	border-bottom:#5aa1fe solid 1px;
+}
+
+.photoSpecies_species{
+	position:relative;
+	display:inline-block;
+	width:192px;
+	padding:1px 1px 1px 0px;
+}
+.photoSpecies_species dt{
+	height:34px;
+	float:left;
+	width:180px;
+	padding-left:10px;
+	border-top:#5aa1fe solid 1px;
+	border-right:#5aa1fe solid 1px;
+}
+.photoSpecies_species a{
+	line-height:34px;
+	float:left;
+	width:58px;
+	color:#000;
+	text-align:center;
+	font-family: "MicrosoftYaHei","微软雅黑";	
+}
+.instrument{
+	width:820px;
+	padding:10px;	
+	margin:0 auto;
+}
+.instrument_item{
+	width:800px;
+	margin-top:20px;
+}
+.instrument_left{
+	width:201px;
+	height:201px;
+	overflow:hidden;
+}
+
+.instrument_photo{
+	width:199px;
+	height:199px;
+	border:#5aa1fe solid 1px;
+}
+.instrument_photo img{
+	width:100%;
+	height:100%;
+}
+.instrument_test{
+	position:relative;
+	left:201px;
+	top:-201px;
+	width:596px;
+	height:199px;
+	margin-right:2px;
+	border:#ccc solid 1px;
+}
+.instrument_test h2{
+	text-align:center;
+	width: 100%;
+	font-size:18px;
+	font-weight: bold;
+	color: #786f66;
+	float:left;
+	line-height: 35px;
+	border-bottom:#5aa1fe solid 1px;
+	margin-bottom:10px;
+	font-family: "MicrosoftYaHei";
+}
+.instrument_test p{
+	padding:10px;
+	text-indent: 2em;
+	font-family: "MicrosoftYaHei";
+	font-size:14px;
+	letter-spacing:2px;
+}
