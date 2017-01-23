@@ -27,9 +27,9 @@
 	);*/
 	myFocus.set({
 	id:'picBox',
-	//pattern:'mF_shutters',
-	height:310,
-	width: 780,
+	pattern:'mF_qiyi',
+	height:600,
+	width: 400,
 	time:2,
 	textHeight:0	
 	}
@@ -39,7 +39,7 @@
 
 </head>
 <body>
-	<div class="top">
+	<div class="top" id="top">
 			<a>咔嚓自拍馆</a>
 	</div> <!-- top结束 -->
 	<div class="wrap" id="wrap">
@@ -106,10 +106,10 @@
 					<div class="ad" id="picBox" >
 						<div class="loading"> <img src="images/loading.gif" alt="图片加载中"></div>
 						<div class="pic">
-							<ul>
-								<li><img id ="pixBox_li1" src="images/ad2.jpg" /></li>
-								<li><img src="images/ad3.jpg" /></li>
-								<li><img src="images/ad4.jpg" /></li>
+							<ul id="pixBox_li1">
+								<li><img src="images/000.jpg" /></li>
+								<li><img src="images/001.jpg" /></li>
+								<li><img src="images/002.jpg" /></li>
 							</ul> 
 						</div>
 					</div><!-- ad结束 -->
@@ -131,7 +131,7 @@
 					<video id="video_test" class="video-js vjs-default-skin vjs-big-play-centered"  
 						controls preload="auto" width="100%" height="100%"
 						poster="img/pure-black.jpg" data-setup=''>
-						<source src="video-js/[Airota][Kabaneri of the Iron fortress][03][1280x720][x264_AAC][CHT].mp4" type='video/mp4' />
+						<source src="[Airota][Kabaneri of the Iron fortress][03][1280x720][x264_AAC][CHT].mp4" type='video/mp4' />
 					</video>  
 				</div>
 			</div><!-- mainlist_item结束 -->
@@ -143,8 +143,8 @@
 								<img src="images/01.jpg" />
 							</div>
 							<div class="instrument_test fl">
-								<h2>M2000相机</h2>
-								<p>单反就是指单镜头反光，即SLR(Single Lens Reflex)，这是当今最流行的取景系统，大多数35mm照相机都采用这种取景器。在这种系统中，反光镜和棱镜的独到设计使得摄影者可以从取景器中直接观察到通过镜头的影像。因此，可以准确地看见胶片即将“看见”的相同影像。该系统的心脏是一块活动的反光镜(如图浅蓝色部分)，它呈45°角安放在胶片平面的前面。进入镜头的光线由反光镜向上反射到一块毛玻璃上。早期的SLR照相机必须以腰平的方式把握照相机并俯视毛玻璃取景
+								<h2>佳能（Canon） EOS 70D </h2>
+								<p class="fl">将CMOS图像感应器传来的约2020万有效像素的庞大信息迅速并恰当处理的关键部件，便是佳能自主开发、生产的高性能DIGIC 5+数字影像处理器。处理速度实现了大幅高速化，它的处理性能为DIGIC 4的约17倍，DIGIC 5的约3倍。DIGIC 5+担负着相机内部的多项处理任务，包括Dual Pixel CMOS AF（全像素双核CMOS AF）的高速对焦、图像生成、降噪处理、相机内RAW显像、最高约7张/秒的高速连拍、即时补偿不同镜头产生的不可避免的多种色像差和全高清短片拍摄等，使EOS 70D得以兼备高画质和高性能。
 								</p>
 							</div>
 						</div>
@@ -155,8 +155,8 @@
 								<img src="images/01.jpg" />
 							</div>
 							<div class="instrument_test fl">
-								<h2>M2000相机</h2>
-								<p>单反就是指单镜头反光，即SLR(Single Lens Reflex)，这是当今最流行的取景系统，大多数35mm照相机都采用这种取景器。在这种系统中，反光镜和棱镜的独到设计使得摄影者可以从取景器中直接观察到通过镜头的影像。因此，可以准确地看见胶片即将“看见”的相同影像。该系统的心脏是一块活动的反光镜(如图浅蓝色部分)，它呈45°角安放在胶片平面的前面。进入镜头的光线由反光镜向上反射到一块毛玻璃上。早期的SLR照相机必须以腰平的方式把握照相机并俯视毛玻璃取景
+								<h2>佳能（Canon） EOS 70D </h2>
+								<p class="fl">将CMOS图像感应器传来的约2020万有效像素的庞大信息迅速并恰当处理的关键部件，便是佳能自主开发、生产的高性能DIGIC 5+数字影像处理器。处理速度实现了大幅高速化，它的处理性能为DIGIC 4的约17倍，DIGIC 5的约3倍。DIGIC 5+担负着相机内部的多项处理任务，包括Dual Pixel CMOS AF（全像素双核CMOS AF）的高速对焦、图像生成、降噪处理、相机内RAW显像、最高约7张/秒的高速连拍、即时补偿不同镜头产生的不可避免的多种色像差和全高清短片拍摄等，使EOS 70D得以兼备高画质和高性能。
 								</p>
 							</div>
 						</div>
@@ -167,8 +167,8 @@
 								<img src="images/01.jpg" />
 							</div>
 							<div class="instrument_test fl">
-								<h2>M2000相机</h2>
-								<p>单反就是指单镜头反光，即SLR(Single Lens Reflex)，这是当今最流行的取景系统，大多数35mm照相机都采用这种取景器。在这种系统中，反光镜和棱镜的独到设计使得摄影者可以从取景器中直接观察到通过镜头的影像。因此，可以准确地看见胶片即将“看见”的相同影像。该系统的心脏是一块活动的反光镜(如图浅蓝色部分)，它呈45°角安放在胶片平面的前面。进入镜头的光线由反光镜向上反射到一块毛玻璃上。早期的SLR照相机必须以腰平的方式把握照相机并俯视毛玻璃取景
+								<h2>佳能（Canon） EOS 70D </h2>
+								<p class="fl">将CMOS图像感应器传来的约2020万有效像素的庞大信息迅速并恰当处理的关键部件，便是佳能自主开发、生产的高性能DIGIC 5+数字影像处理器。处理速度实现了大幅高速化，它的处理性能为DIGIC 4的约17倍，DIGIC 5的约3倍。DIGIC 5+担负着相机内部的多项处理任务，包括Dual Pixel CMOS AF（全像素双核CMOS AF）的高速对焦、图像生成、降噪处理、相机内RAW显像、最高约7张/秒的高速连拍、即时补偿不同镜头产生的不可避免的多种色像差和全高清短片拍摄等，使EOS 70D得以兼备高画质和高性能。
 								</p>
 							</div>
 						</div>
@@ -200,6 +200,7 @@
 	var instrument_left=document.getElementsByName("instrument_left");
 	var instrument_right=document.getElementsByName("instrument_right");
 	var instrument=document.getElementById("instrument");
+	var documentTop=document.getElementById("top");
 	var instrumentFlag;
 	main();
 	function main(){
@@ -270,9 +271,11 @@
 		photoSpecies_data[4][7]="二小姐";
 	}
 	function getWindowHeight(){
-        	var url=evt.getStyle(wrap).backgroundImage;
-		wrap.style.height=document.body.scrollHeight-30+"px";
-		wrap.style.width=window.screen.availWidth+"px";
+        var url=evt.getStyle(wrap).backgroundImage;
+		//wrap.style.height=document.body.scrollHeight-30+"px";
+	    
+		wrap.style.height="900px";
+		wrap.style.width=evt.getStyle(documentTop).width;
 		var i=0;
 		wrap.timer=setInterval(function(){
 			var wrapBackgroud=[];
@@ -280,13 +283,13 @@
 		            wrapBackgroud[1]="bz1.jpg";
 			    wrapBackgroud[2]="bz2.jpg";
 		            wrapBackgroud[3]="bz3.jpg";
-			url=url.slice(0,url.length-9)+wrapBackgroud[i]+"\")";
+			url=url.slice(0,url.length-8)+wrapBackgroud[i]+")";
 			wrap.style.backgroundImage=""+url;
 			i++;
 		        if(i==4)
 				i=0;
 			
-		},2000);
+		},4000);
 	}
 	/*
 	function screenInfo(){
@@ -337,6 +340,7 @@
 		evt.stopBubble(e);
 		var elePhotoName=evt.getTarget(e).innerHTML;
 		var pixBox_li1=document.getElementById("pixBox_li1");
+		var pixBoxImg=pixBox_li1.getElementsByTagName("img");
 		production.style.display="block";
 		var x,y;
 		for (i=0;i<photoSpecies_data.length;i++){
@@ -349,13 +353,13 @@
 			}
 			if(typeof(x)!='undefined'){break;}
 		}
-		
-		if(""+x+y+".jpg"===pixBox_li1.src.split("/")[(pixBox_li1.src.split("/").length-1)]){
+		if(""+x+y+"0"+".jpg"===pixBoxImg[0].src.split("/")[(pixBoxImg[0].src.split("/").length-1)]){
 			return;
 		}
-		pixBox_li1.src="images/"+x+y+".jpg";
-
-	}
+		for(var i=0;i<pixBoxImg.length;i++){
+			pixBoxImg[i].src="images/"+x+y+i+".jpg";
+		}
+		}
 	function showPhotoSpeciesDt(e){
 		evt.stopBubble(e);
 		var ele=evt.getTarget(e).parentNode;

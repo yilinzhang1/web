@@ -23,8 +23,6 @@
 
 .wrap{
 	background-image:url(../images/bz2.jpg);
-	background-attachment:fixed;
-
 }
 
 .logo{
@@ -64,15 +62,15 @@
 
 .work{
 	display:none;
-	width: 800px;
+	width: 400px;
 	margin:0 auto;
 }
 
 
 .ad{
 	margin-top:100px;
-	width:780px;
-	height: 310px;
+	width:400px;
+	height: 600px;
 	overflow: hidden;/*溢出隐藏*/
 	margin-bottom: 100px;
 }
@@ -117,7 +115,8 @@
 .photoSpecies_item a{
 	line-height:34px;
 	width:100%;
-	color:#fff;
+	color:#000;
+	font-weight: bold;
 	font-family: "MicrosoftYaHei","微软雅黑";
 }
 .photoSpecies_item dt{
@@ -207,6 +206,7 @@
 	font-family: "MicrosoftYaHei";
 }
 .instrument_test p{
+	vertical-align: middle;
 	padding:10px;
 	text-indent: 2em;
 	font-family: "MicrosoftYaHei";
