@@ -14,7 +14,7 @@
 	<script src="video-js/video.js"></script>
 	<script src="js/perfectFramwork.js"></script>
 	<script type="text/javascript" src=js/event-utility.js></script>
-	   
+	<script type="text/javascript" src=js/jquery-3.1.1.min.js></script>
 
 <script type="text/javascript"> 
 	videojs.options.flash.swf = "video-js/video-js.swf";
@@ -106,7 +106,7 @@
 					<div class="ad" id="picBox" >
 						<div class="loading"> <img src="images/loading.gif" alt="图片加载中"></div>
 						<div class="pic">
-							<ul id="pixBox_li1">
+							<ul id="pixBox_li">
 								<li><img src="images/000.jpg" /></li>
 								<li><img src="images/001.jpg" /></li>
 								<li><img src="images/002.jpg" /></li>
@@ -182,46 +182,35 @@
 
 </body>
 <script>
-	var wrap=document.getElementById("wrap");
+	//var wrap=document.getElementById("wrap");
+	var wrap=$("#wrap")[0];
 	var logo_number=0;
-	var logo=document.getElementById("logo_wrap");
-	var logo_span=logo.getElementsByTagName("span");
-	var main_list=document.getElementsByName("mainlist");
-	var viedoDiv=document.getElementById("videoDiv");
+	var logo=$("#logo_wrap")[0];
+	var logo_span=$("#logo_wrap>span");
+	var main_list=$("div[name='mainlist']");
+	var viedoDiv=$("#videoDiv")[0];
 	var video=videojs('video_test');
-	var production=document.getElementById("production");
-	var species=document.getElementById("Species");
-	var photoSpecies=document.getElementById("photoSpecies");
-	var photoSpecies_dt=photoSpecies.getElementsByTagName("dt");
-	var photoSpecies_dd=photoSpecies.getElementsByTagName("dd");
-	var photoSpecies_species=document.getElementById("photoSpecies_species");
+	var production=$("#production")[0];
+	var species=$("#Species");
+	var photoSpecies=$("#photoSpecies")[0];
+	var photoSpecies_dt=$("#photoSpecies>>dt");
+	var photoSpecies_species=$("#photoSpecies_species")[0];
 	var photoSpecies_select;
 	var photoSpecies_data=[];
-	var instrument_left=document.getElementsByName("instrument_left");
-	var instrument_right=document.getElementsByName("instrument_right");
-	var instrument=document.getElementById("instrument");
-	var documentTop=document.getElementById("top");
+	var instrument_left=$("div[name='instrument_left']");
+	var instrument_right=$("div[name='instrument_right']");
+	var instrument=$("#instrument");
+	var documentTop=$("#top")[0];
 	var instrumentFlag;
 	main();
 	function main(){
 		init();
 		getWindowHeight();
 		logo_span[logo_number].className="logo_main_visited"; 
-		for(var i=0;i<logo_span.length;i++){
-		   	//change(logo_span,i,viedoDiv,video,production);
-			evt.addListener(logo_span[i],"mouseover",eventChange);
-		}
-		for(var i=0;i<photoSpecies_dt.length;i++){
-		   	//change(logo_span,i,viedoDiv,video,production);
-			evt.addListener(photoSpecies_dt[i],"mouseover",showPhotoSpeciesDt);
-		}
-		evt.addListener(species,"mouseover",deletePhotoSpecies);
-		evt.addListener(species,"mouseoout",deletePhotoSpecies);
-		//for(var i=0;i<instrument_left.length;i++){
-		//	evt.addListener(instrument_left[i],"mouseover",instrumentMoveRight);
-		//	evt.addListener(instrument_left[i],"mouseout",instrumentMoveLeft);
-		//}
-		evt.addListener(instrument,"mouseover",instrumentMoveRight);
+		logo_span.on("mouseover",eventChange);
+		photoSpecies_dt.on("mouseover",showPhotoSpeciesDt);
+		species.on("mouseover mouseout",deletePhotoSpecies);
+		instrument.on("mouseover",instrumentMoveRight);
 	}
 	function init(){
 		photoSpecies_data[0]=[];
@@ -271,45 +260,28 @@
 		photoSpecies_data[4][7]="二小姐";
 	}
 	function getWindowHeight(){
-        var url=evt.getStyle(wrap).backgroundImage;
+        	var url=evt.getStyle(wrap).backgroundImage;
 		//wrap.style.height=document.body.scrollHeight-30+"px";
-	    
-		wrap.style.height="900px";
-		wrap.style.width=evt.getStyle(documentTop).width;
+		var myRegExp=/jpg/gi;
+	        var lastStringUrl=url.slice(url.search(myRegExp));
+		//wrap.style.height="900px";
+		$("#wrap").css("height","900px");
+		$("#wrap").css("width",evt.getStyle(documentTop).width);
 		var i=0;
 		wrap.timer=setInterval(function(){
 			var wrapBackgroud=[];
-		            wrapBackgroud[0]="bz0.jpg";
-		            wrapBackgroud[1]="bz1.jpg";
-			    wrapBackgroud[2]="bz2.jpg";
-		            wrapBackgroud[3]="bz3.jpg";
-			url=url.slice(0,url.length-8)+wrapBackgroud[i]+")";
-			wrap.style.backgroundImage=""+url;
+		            wrapBackgroud[0]="bz0";
+		            wrapBackgroud[1]="bz1";
+			    wrapBackgroud[2]="bz2";
+		            wrapBackgroud[3]="bz3";
+			url=url.slice(0,url.search(myRegExp)-4)+wrapBackgroud[i]+"."+lastStringUrl;
+			$("#wrap").css("background-image",url);
 			i++;
 		        if(i==4)
 				i=0;
 			
 		},4000);
 	}
-	/*
-	function screenInfo(){
-	    var  s = "";
-	   s += "\r\n网页可见区域宽："+ document.body.clientWidth;
-	   s += "\r\n网页可见区域高："+ document.body.clientHeight;
-	   s += "\r\n网页可见区域宽："+ document.body.offsetWidth  +" (包括边线的宽)";
-	   s += "\r\n网页可见区域高："+ document.body.offsetHeight +" (包括边线的宽)";
-	   s += "\r\n网页正文全文宽："+ document.body.scrollWidth;
-	   s += "\r\n网页正文全文高："+ document.body.scrollHeight;
-	   s += "\r\n网页被卷去的高："+ document.body.scrollTop;
-	   s += "\r\n网页被卷去的左："+ document.body.scrollLeft;
-	   s += "\r\n网页正文部分上："+ window.screenTop;
-	   s += "\r\n网页正文部分左："+ window.screenLeft;
-	   s += "\r\n屏幕分辨率的高："+ window.screen.height;
-	   s += "\r\n屏幕分辨率的宽："+ window.screen.width;
-	   s += "\r\n屏幕可用工作区高度："+ window.screen.availHeight;
-	   s += "\r\n屏幕可用工作区宽度："+ window.screen.availWidth;
-	   alert(s);
-	}*/
 	function eventChange(e){
 		evt.stopBubble(e);
 		var ele=evt.getTarget(e);
@@ -339,8 +311,7 @@
 	function changePicBox(e){
 		evt.stopBubble(e);
 		var elePhotoName=evt.getTarget(e).innerHTML;
-		var pixBox_li1=document.getElementById("pixBox_li1");
-		var pixBoxImg=pixBox_li1.getElementsByTagName("img");
+		var pixBoxImg=$("#pixBox_li>>img");
 		production.style.display="block";
 		var x,y;
 		for (i=0;i<photoSpecies_data.length;i++){
@@ -401,8 +372,6 @@
 		}
 		var dt=photoSpecies_species.getElementsByTagName("dt");
 		var j=dt.length;
-		//x=event.clientX;
-		//y=event.clientY;
 		if (j!=0){
 			for(i=j-1;i>=0;i--){
 				photoSpecies_species.removeChild(dt[i]);
@@ -426,7 +395,6 @@
 		}else
 			return;
 	}
-
 	/*function deletePhotoSpeciesSpeciesDt(){
 		evt.stopBubble(e);
 		var dt=this.getElementsByTagName("dt");
@@ -439,6 +407,25 @@
 				this.removeChild(dt[i]);
 			}
 		}
+	}*/
+	/*
+	function screenInfo(){
+	    var  s = "";
+	   s += "\r\n网页可见区域宽："+ document.body.clientWidth;
+	   s += "\r\n网页可见区域高："+ document.body.clientHeight;
+	   s += "\r\n网页可见区域宽："+ document.body.offsetWidth  +" (包括边线的宽)";
+	   s += "\r\n网页可见区域高："+ document.body.offsetHeight +" (包括边线的宽)";
+	   s += "\r\n网页正文全文宽："+ document.body.scrollWidth;
+	   s += "\r\n网页正文全文高："+ document.body.scrollHeight;
+	   s += "\r\n网页被卷去的高："+ document.body.scrollTop;
+	   s += "\r\n网页被卷去的左："+ document.body.scrollLeft;
+	   s += "\r\n网页正文部分上："+ window.screenTop;
+	   s += "\r\n网页正文部分左："+ window.screenLeft;
+	   s += "\r\n屏幕分辨率的高："+ window.screen.height;
+	   s += "\r\n屏幕分辨率的宽："+ window.screen.width;
+	   s += "\r\n屏幕可用工作区高度："+ window.screen.availHeight;
+	   s += "\r\n屏幕可用工作区宽度："+ window.screen.availWidth;
+	   alert(s);
 	}*/
 </script>
 </html>

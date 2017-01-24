@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>CLID</title>
+	<link rel="stylesheet" type="text/css" href="css/kacha.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<script type="text/javascript" src="js/setHomeSetFav.js" charset="gb2312"></script>
+	<script type="text/javascript" src="js/myfocus-2.0.1.min.js"></script>
+	<script type="text/javascript" src="js/mf-pattern/mF_YSlider.js"></script>
+	<link rel="stylesheet" type="text/css" href="js/mf-pattern/mF_YSlider.css">
+	<link href="video-js/video-js.css" rel="stylesheet" type="text/css">
+	<script src="video-js/video.js"></script>
+	<script src="js/perfectFramwork.js"></script>
+	<script type="text/javascript" src=js/event-utility.js></script>
+	   
+
+<script type="text/javascript"> 
+	videojs.options.flash.swf = "video-js/video-js.swf";
+    if (navigator.userAgent.indexOf('MSIE') >= 0){
+        document.getElementById("videoDiv").innerHTML='<embed src="video-js/[Airota][Kabaneri of the Iron fortress][03][1280x720][x264_AAC][CHT].mp4" autostart="true" loop="true" width="100%" height="100%" >';
+    }
+
+	/*myFocus.set({
+	id:'picBox_two'}
+	);*/
+	myFocus.set({
+	id:'picBox',
+	//pattern:'mF_shutters',
+	height:310,
+	width: 780,
+	time:2,
+	textHeight:0	
+	}
+	);
+
+</script> 
+
+</head>
+<body>
+	<div class="top">
+			<a>咔嚓自拍馆</a>
+	</div> <!-- top结束 -->
+	<div class="wrap">
+		<div class="logo" >
+			<div id="logo_wrap">
+			<span >作品展示</span> 
+			<span >视频观赏</span> 
+			<span >仪器介绍</span>
+			<span >联系方式</span>
+			</div>
+		</div><!-- logo结束 -->
+		<div class="main" id="main">
+			<div name="mainlist" class="mainlist_item_show">
+				<div  id="photoSpecies" onmouseover="deletePhotoSpecies(this)">
+					<dl class="photoSpecies_item clearfix">
+						<dt class="fl">
+							<a href="#" >剑三</a>
+						</dt>
+
+					</dl>
+					<dl class="photoSpecies_item clearfix">
+						<dt class="fl">
+							<a href="#" >日常</a>
+						</dt>
+
+					</dl>
+					<dl class="photoSpecies_item clearfix">
+						<dt class="fl">
+							<a href="#" >COS</a>
+						</dt>
+					</dl>
+					<dl class="photoSpecies_item clearfix">
+						<dt class="fl">
+							<a href="#" >CP</a>
+						</dt>
+
+					</dl>
+					<dl class="photoSpecies_item clearfix ">
+						<dt class="fl photoSpecies_dd_bottom">
+							<a href="#" >TCL</a>
+						</dt>
+
+					</dl>
+				</div><!-- photoSpecies结束 -->
+				<div class=photoSpecies_species clearfix id="photoSpecies_species" >
+					<!--<dt >
+						<a href="#" >Tcl</a>
+						<a href="#" >Tcl</a>
+						<a href="#" >Tcl</a>							
+					</dt>
+					<dt >
+						<a href="#" >Tcl</a>
+						<a href="#" >Tcl</a>
+						<a href="#" >Tcl</a>							
+					</dt>
+					<dt >
+						<a href="#" >Tcl</a>
+						<a href="#" >Tcl</a>							
+					</dt>-->
+				</div>
+				<div class="work clearfix" id="production">
+					<div class="ad" id="picBox" >
+						<div class="loading"> <img src="images/loading.gif" alt="图片加载中"></div>
+						<div class="pic">
+							<ul>
+								<li><img id ="pixBox_li1" src="images/ad2.jpg" /></li>
+								<li><img src="images/ad3.jpg" /></li>
+								<li><img src="images/ad4.jpg" /></li>
+							</ul> 
+						</div>
+					</div><!-- ad结束 -->
+					<!--<div class="ad" id="picBox_two" >
+						<div class="loading"> <img src="images/loading.gif" alt="图片加载中"></div>
+						<div class="pic">
+							<ul>
+								<li><img src="images/ad2.jpg" /></li>
+								<li><img src="images/ad3.jpg" /></li>
+								<li><img src="	images/ad4.jpg" /></li>
+							</ul>
+						</div>-->
+					</div><!-- ad结束 -->
+				</div>
+			</div>
+
+			<div name="mainlist" class="mainlist_item">
+				<div class="my_video" id="videoDiv">
+					<video id="video_test" class="video-js vjs-default-skin vjs-big-play-centered"  
+						controls preload="auto" width="100%" height="100%"
+						poster="img/pure-black.jpg" data-setup=''>
+						<source src="video-js/[Airota][Kabaneri of the Iron fortress][03][1280x720][x264_AAC][CHT].mp4" type='video/mp4' />
+					</video>  
+				</div>
+			<div name="mainlist" class="mainlist_item"></div>
+			<div name="mainlist" class="mainlist_item"></div>
+		</div><!-- main结束 -->
+	</div><!-- warp结束 -->
+	<div class="bottom clearfix" id="bottom">
+	</bottom><!-- bottom结束 -->
+</body>
+<script>
+	 var logo_number=0;
+	 var logo=document.getElementById("logo_wrap");
+	 var logo_span=logo.getElementsByTagName("span");
+	 var main_list=document.getElementsByName("mainlist");
+	 var viedoDiv=document.getElementById("videoDiv");
+	 var video=videojs('video_test');
+	 var production=document.getElementById("production");
+	 var photoSpecies=document.getElementById("photoSpecies");
+	 var photoSpecies_dt=photoSpecies.getElementsByTagName("dt");
+	 var photoSpecies_dd=photoSpecies.getElementsByTagName("dd");
+	 var photoSpecies_species=document.getElementById("photoSpecies_species");
+	 var photoSpecies_select;
+	 var photoSpecies_data=[];
+	 main();
+	 function main(){
+		 init();
+		 logo_span[logo_number].className="logo_main_visited"; 
+		 for(var i=0;i<logo_span.length;i++){
+	     	           	//change(logo_span,i,viedoDiv,video,production);
+				evt.addListener(logo_span[i],"mouseover",eventChange);
+		  	}
+		 for(var i=0;i<photoSpecies_dt.length;i++){
+	     	           	//change(logo_span,i,viedoDiv,video,production);
+				evt.addListener(photoSpecies_dt[i],"mouseover",showPhotoSpeciesDt);
+		  	}
+		 evt.addListener(bottom,"mouseover",bottomMoveRight);
+		 evt.addListener(bottom,"mouseout",bottomMoveLeft);
+	 }
+         function init(){
+		photoSpecies_data[0]=[];
+		photoSpecies_data[1]=[];
+		photoSpecies_data[2]=[];
+		photoSpecies_data[3]=[];
+		photoSpecies_data[4]=[];
+		photoSpecies_data[0][0]="藏剑";
+		photoSpecies_data[0][1]="天策";
+		photoSpecies_data[0][2]="万花";
+		photoSpecies_data[0][3]="毒姐";
+		photoSpecies_data[0][4]="秀萝";
+		photoSpecies_data[0][5]="和尚";
+		photoSpecies_data[0][6]="七秀";
+		photoSpecies_data[0][7]="二小姐";
+		photoSpecies_data[1][0]="TCL";
+		photoSpecies_data[1][1]="华为";
+		photoSpecies_data[1][2]="小米";
+		photoSpecies_data[1][3]="？？？";
+		photoSpecies_data[1][4]="秀萝";
+		photoSpecies_data[1][5]="和尚";
+		photoSpecies_data[1][6]="七秀";
+		photoSpecies_data[1][7]="二小姐";
+		photoSpecies_data[2][0]="藏剑";
+		photoSpecies_data[2][1]="天策";
+		photoSpecies_data[2][2]="万花";
+		photoSpecies_data[2][3]="毒姐";
+		photoSpecies_data[2][4]="秀萝";
+		photoSpecies_data[2][5]="和尚";
+		photoSpecies_data[2][6]="七秀";
+		photoSpecies_data[2][7]="二小姐";
+		photoSpecies_data[3][0]="藏剑";
+		photoSpecies_data[3][1]="天策";
+		photoSpecies_data[3][2]="万花";
+		photoSpecies_data[3][3]="毒姐";
+		photoSpecies_data[3][4]="秀萝";
+		photoSpecies_data[3][5]="和尚";
+		photoSpecies_data[3][6]="七秀";
+		photoSpecies_data[3][7]="二小姐";
+		photoSpecies_data[4][0]="藏剑";
+		photoSpecies_data[4][1]="天策";
+		photoSpecies_data[4][2]="万花";
+		photoSpecies_data[4][3]="毒姐";
+		photoSpecies_data[4][4]="秀萝";
+		photoSpecies_data[4][5]="和尚";
+		photoSpecies_data[4][6]="七秀";
+		photoSpecies_data[4][7]="二小姐";
+	 }
+	 function eventChange(e){
+		e.stopPropagation();
+		var ele=evt.getTarget(e);
+		evt.preventDefault(e);
+		var i = evt.getChildrenIndex(ele);
+		logo_span[logo_number].className="";
+		ele.className="logo_main_visited";
+		main_list[logo_number].className="mainlist_item";
+		main_list[i].className="mainlist_item_show";
+		logo_number=i;
+
+		switch(logo_number){
+			case (0):
+				video.pause();
+				break;
+			case (1):
+				break;
+			case (2):
+				video.pause();
+				break;
+			case (3):
+				video.pause();
+				break;
+			};		
+	}
+
+	function bottomMoveRight(e){
+		e.stopPropagation();
+		var ele=evt.getTarget(e);
+		var bottom_moveright={width:1000};
+		startMove(ele,bottom_moveright)
+	}
+	function bottomMoveLeft(e){
+		e.stopPropagation();
+		var ele=evt.getTarget(e);
+		var bottom_moveright={width:300};
+		startMove(ele,bottom_moveright)
+	}
+	function changePicBox(e){
+		e.stopPropagation();
+		var elePhotoName=evt.getTarget(e).innerHTML;
+		var pixBox_li1=document.getElementById("pixBox_li1");
+		production.style.display="block";
+		var x,y;
+		for (i=0;i<photoSpecies_data.length;i++){
+			for(j=0;j<photoSpecies_data[i].length;j++){
+				if(elePhotoName==photoSpecies_data[i][j]){
+					x=i;
+					y=j;
+					break;
+				}
+			}
+			if(typeof(x)!='undefined'){break;}
+		}
+		
+		if(""+x+y+".jpg"===pixBox_li1.src.split("/")[(pixBox_li1.src.split("/").length-1)]){
+			return;
+		}
+		pixBox_li1.src="images/"+x+y+".jpg";
+
+	}
+	function showPhotoSpeciesDt(e){
+		e.stopPropagation();
+		var ele=evt.getTarget(e).parentNode;
+		if (ele.nodeName=="DT"){
+			return;
+		}
+	        var dt=photoSpecies_species.getElementsByTagName("dt");
+		var j=dt.length;
+		if (j!=0){
+			for(i=j-1;i>=0;i--){
+				photoSpecies_species.removeChild(dt[i]);
+			}
+		}
+		var i = evt.getChildrenIndex(ele);
+		ele=photoSpecies_species.getElementsByTagName("a");
+		//var value=ele[i].innerHTML;
+		var len =Math.ceil(photoSpecies_data[i].length/3);
+		for(k=0;k<len;k++){
+			var dt = document.createElement("dt");
+			photoSpecies_species.appendChild(dt);
+			for(j=0;j<3;j++){
+				var a = document.createElement("a");
+				a.setAttribute("href","#");
+				if (k*3+j<photoSpecies_data[i].length){
+					a.innerHTML=photoSpecies_data[i][k*3+j];
+					dt.appendChild(a);
+				}
+				evt.addListener(a,"click",changePicBox);
+			}
+		}
+		evt.addListener(photoSpecies_species,"mouseout",deletePhotoSpeciesSpeciesDt);
+	}
+	function deletePhotoSpecies(){
+		var dt=photoSpecies_species.getElementsByTagName("dt");
+		var j=dt.length;
+		x=event.clientX;
+		y=event.clientY;
+		alert(x+":"+y+" " +photoSpecies_species.offsetHeight+":"+photoSpecies_species.offsetWidth+" " +evt.pageX(this)+":"+evt.pageY(this));
+		if (j!=0&& (x-evt.pageX(photoSpecies_species)<0 || x-evt.pageX(photoSpecies_species)> photoSpecies_species.offsetWidth-1 || y-evt.pageY(photoSpecies_species)<0 || y-evt.pageY(photoSpecies_species)>photoSpecies_species.offsetHeight-1)){
+			for(i=j-1;i>=0;i--){
+				photoSpecies_species.removeChild(dt[i]);
+			}
+		}
+	}
+	function deletePhotoSpeciesSpeciesDt(){
+		alert(this.nodeName);
+		var dt=this.getElementsByTagName("dt");
+		var j=dt.length;
+		event = event||window.event;
+		x=event.clientX;
+		y=event.clientY;
+		alert(x+":"+y+" " +this.offsetHeight+":"+this.offsetWidth+" " +evt.pageX(this)+":"+evt.pageY(this));
+		if (j!=0 && (x-evt.pageX(this)<0 || x-evt.pageX(this)> this.offsetWidth-1 || y-evt.pageY(this)<0 || y-evt.pageY(this)>this.offsetHeight-1)){
+			for(i=j-1;i>=0;i--){
+				this.removeChild(dt[i]);
+			}
+		}
+	}
+
+</script>
+</html>
+

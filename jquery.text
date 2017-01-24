@@ -1,0 +1,18 @@
+http://jquery.com/download 下载网站
+$("a") 
+$("a").attr("target","_blank");
+$("p>span")
+$("p>>span")
+("a,#myDiv,.myCssClass,p>span")
+$("a").css("color","red")
+$("a").css("background-color","red"),$("a").css("backgroundColor","red")效果一致
+$("a").addClass("class-one class-two")
+$("a").removeClass("class-one class-two")
+$("a").toggleClass("class-one") 如果class包含class-one则移除，若不包含则填加 切换类
+$("<a/>").attr({id:"myLink",href:"http://jquery.com",title:"jQuery`s Website"}).text("Click here to go to jQuery website");
+$(document.body).append(a);
+$(".class-one").remove();删除CSS类class-one所有元素
+$("a").empty()删除某个元素的所有节点
+$("a").on("mouseover mouseout click",function(){alert("????")});
+$("a").off("mouseover",function(){alert("????")});删除方法
+$("a").off();删除元素的所有监听事件
