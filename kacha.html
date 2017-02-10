@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<title>CLID</title>
 	<link rel="stylesheet" type="text/css" href="css/kacha.css">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="js/mf-pattern/mF_YSlider.css">
+	<link href="video-js/video-js.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="js/setHomeSetFav.js" charset="gb2312"></script>
 	<script type="text/javascript" src="js/myfocus-2.0.1.min.js"></script>
 	<script type="text/javascript" src="js/mf-pattern/mF_YSlider.js"></script>
-	<link rel="stylesheet" type="text/css" href="js/mf-pattern/mF_YSlider.css">
-	<link href="video-js/video-js.css" rel="stylesheet" type="text/css">
 	<script src="video-js/video.js"></script>
 	<script src="js/perfectFramwork.js"></script>
 	<script type="text/javascript" src=js/event-utility.js></script>
 	<script type="text/javascript" src=js/jquery-3.1.1.min.js></script>
-
 <script type="text/javascript"> 
 	videojs.options.flash.swf = "video-js/video-js.swf";
     if (navigator.userAgent.indexOf('MSIE') >= 0){
         document.getElementById("videoDiv").innerHTML='<embed src="video-js/[Airota][Kabaneri of the Iron fortress][03][1280x720][x264_AAC][CHT].mp4" autostart="true" loop="true" width="100%" height="100%" >';
     }
-
 	/*myFocus.set({
 	id:'picBox_two'}
 	);*/
@@ -34,9 +31,7 @@
 	textHeight:0	
 	}
 	);
-
 </script> 
-
 </head>
 <body>
 	<div class="top" id="top">
@@ -63,24 +58,24 @@
 						</dl>
 						<dl class="photoSpecies_item clearfix">
 							<dt class="fl">
-								<a href="#" >日常</a>
+								<a href="#" >手机</a>
 							</dt>
 
 						</dl>
 						<dl class="photoSpecies_item clearfix">
 							<dt class="fl">
-								<a href="#" >COS</a>
+								<a href="#" >游戏</a>
 							</dt>
 						</dl>
 						<dl class="photoSpecies_item clearfix">
 							<dt class="fl">
-								<a href="#" >CP</a>
+								<a href="#" >动漫</a>
 							</dt>
 
 						</dl>
 						<dl class="photoSpecies_item clearfix ">
 							<dt class="fl photoSpecies_dd_bottom">
-								<a href="#" >TCL</a>
+								<a href="#" >新番</a>
 							</dt>
 
 						</dl>
@@ -182,82 +177,93 @@
 
 </body>
 <script>
-	//var wrap=document.getElementById("wrap");
-	var wrap=$("#wrap")[0];
-	var logo_number=0;
-	var logo=$("#logo_wrap")[0];
-	var logo_span=$("#logo_wrap>span");
-	var main_list=$("div[name='mainlist']");
-	var viedoDiv=$("#videoDiv")[0];
-	var video=videojs('video_test');
-	var production=$("#production")[0];
-	var species=$("#Species");
-	var photoSpecies=$("#photoSpecies")[0];
-	var photoSpecies_dt=$("#photoSpecies>>dt");
-	var photoSpecies_species=$("#photoSpecies_species")[0];
-	var photoSpecies_select;
-	var photoSpecies_data=[];
-	var instrument_left=$("div[name='instrument_left']");
-	var instrument_right=$("div[name='instrument_right']");
-	var instrument=$("#instrument");
-	var documentTop=$("#top")[0];
-	var instrumentFlag;
+	var My={};
+	My.variable={   photoSpecies_species:$("#photoSpecies_species")[0],
+			wrap:$("#wrap")[0],
+			logoNumber:0,
+			logo:$("#logo_wrap")[0],
+			logoSpan:$("#logo_wrap>span"),
+			mainList:$("div[name='mainlist']"),
+			viedoDiv:$("#videoDiv")[0],
+			video:videojs('video_test'),
+			production:$("#production")[0],
+			species:$("#Species"),
+			photoSpecies:$("#photoSpecies")[0],
+			photoSpeciesDt:$("#photoSpecies>>dt"),
+			photoSpeciesData:[],
+			instrumentLeft:$("div[name='instrument_left']"),
+			instrument:$("#instrument"),
+			documentTop:$("#top")[0],
+			};
 	main();
 	function main(){
 		init();
 		getWindowHeight();
-		logo_span[logo_number].className="logo_main_visited"; 
-		logo_span.on("mouseover",eventChange);
-		photoSpecies_dt.on("mouseover",showPhotoSpeciesDt);
-		species.on("mouseover mouseout",deletePhotoSpecies);
-		instrument.on("mouseover",instrumentMoveRight);
+		My.variable.logoSpan[My.variable.logoNumber].className="logo_main_visited"; 
+		My.variable.logoSpan.on("mouseover",eventChange);
+		My.variable.photoSpeciesDt.on("mouseover",showPhotoSpeciesDt);
+		My.variable.species.on("mouseover mouseout",deletePhotoSpecies);
+		My.variable.instrument.on("mouseover",instrumentMoveRight);
 	}
 	function init(){
-		photoSpecies_data[0]=[];
-		photoSpecies_data[1]=[];
-		photoSpecies_data[2]=[];
-		photoSpecies_data[3]=[];
-		photoSpecies_data[4]=[];
-		photoSpecies_data[0][0]="藏剑";
-		photoSpecies_data[0][1]="天策";
-		photoSpecies_data[0][2]="万花";
-		photoSpecies_data[0][3]="毒姐";
-		photoSpecies_data[0][4]="秀萝";
-		photoSpecies_data[0][5]="和尚";
-		photoSpecies_data[0][6]="七秀";
-		photoSpecies_data[0][7]="二小姐";
-		photoSpecies_data[1][0]="TCL";
-		photoSpecies_data[1][1]="华为";
-		photoSpecies_data[1][2]="小米";
-		photoSpecies_data[1][3]="？？？";
-		photoSpecies_data[1][4]="秀萝";
-		photoSpecies_data[1][5]="和尚";
-		photoSpecies_data[1][6]="七秀";
-		photoSpecies_data[1][7]="二小姐";
-		photoSpecies_data[2][0]="藏剑";
-		photoSpecies_data[2][1]="天策";
-		photoSpecies_data[2][2]="万花";
-		photoSpecies_data[2][3]="毒姐";
-		photoSpecies_data[2][4]="秀萝";
-		photoSpecies_data[2][5]="和尚";
-		photoSpecies_data[2][6]="七秀";
-		photoSpecies_data[2][7]="二小姐";
-		photoSpecies_data[3][0]="藏剑";
-		photoSpecies_data[3][1]="天策";
-		photoSpecies_data[3][2]="万花";
-		photoSpecies_data[3][3]="毒姐";
-		photoSpecies_data[3][4]="秀萝";
-		photoSpecies_data[3][5]="和尚";
-		photoSpecies_data[3][6]="七秀";
-		photoSpecies_data[3][7]="二小姐";
-		photoSpecies_data[4][0]="藏剑";
-		photoSpecies_data[4][1]="天策";
-		photoSpecies_data[4][2]="万花";
-		photoSpecies_data[4][3]="毒姐";
-		photoSpecies_data[4][4]="秀萝";
-		photoSpecies_data[4][5]="和尚";
-		photoSpecies_data[4][6]="七秀";
-		photoSpecies_data[4][7]="二小姐";
+		My.variable.photoSpeciesData[0]=[];
+		My.variable.photoSpeciesData[1]=[];
+		My.variable.photoSpeciesData[2]=[];
+		My.variable.photoSpeciesData[3]=[];
+		My.variable.photoSpeciesData[4]=[];
+		My.variable.photoSpeciesData[0][0]="藏剑";
+		My.variable.photoSpeciesData[0][1]="天策";
+		My.variable.photoSpeciesData[0][2]="万花";
+		My.variable.photoSpeciesData[0][3]="毒姐";
+		My.variable.photoSpeciesData[0][4]="秀萝";
+		My.variable.photoSpeciesData[0][5]="少林";
+		My.variable.photoSpeciesData[0][6]="七秀";
+		My.variable.photoSpeciesData[0][7]="纯阳";
+		My.variable.photoSpeciesData[0][8]="唐门";
+		My.variable.photoSpeciesData[0][9]="明教";
+		My.variable.photoSpeciesData[0][10]="丐帮";
+		My.variable.photoSpeciesData[1][0]="TCL";
+		My.variable.photoSpeciesData[1][1]="oppo";
+		My.variable.photoSpeciesData[1][2]="小米";
+		My.variable.photoSpeciesData[1][3]="华为";
+		My.variable.photoSpeciesData[1][4]="中科";
+		My.variable.photoSpeciesData[1][5]="三星";
+		My.variable.photoSpeciesData[1][6]="魅族";
+		My.variable.photoSpeciesData[1][7]="洛基亚";
+		My.variable.photoSpeciesData[2][0]="LOL";
+		My.variable.photoSpeciesData[2][1]="DOTA";
+		My.variable.photoSpeciesData[2][2]="剑灵";
+		My.variable.photoSpeciesData[2][3]="剑三";
+		My.variable.photoSpeciesData[2][4]="地下城";
+		My.variable.photoSpeciesData[2][5]="龙之谷";
+		My.variable.photoSpeciesData[2][6]="梦幻西游";
+		My.variable.photoSpeciesData[2][7]="梦幻诛仙";
+		My.variable.photoSpeciesData[3][0]="日在校园";
+		My.variable.photoSpeciesData[3][1]="棋魂";
+		My.variable.photoSpeciesData[3][2]="火影";
+		My.variable.photoSpeciesData[3][3]="海贼王";
+		My.variable.photoSpeciesData[3][4]="FATE";
+		My.variable.photoSpeciesData[3][5]="你的名字";
+		My.variable.photoSpeciesData[3][6]="龙珠";
+		My.variable.photoSpeciesData[3][7]="数码暴龙";		
+		My.variable.photoSpeciesData[3][8]="三月狮子";
+		My.variable.photoSpeciesData[3][9]="妖尾";
+		My.variable.photoSpeciesData[3][10]="家庭教师";
+		My.variable.photoSpeciesData[3][11]="air";
+		My.variable.photoSpeciesData[3][12]="clannad";
+		My.variable.photoSpeciesData[3][14]="未闻花名";
+		My.variable.photoSpeciesData[3][15]="守护甜心";
+		My.variable.photoSpeciesData[3][16]="进击";
+		My.variable.photoSpeciesData[3][17]="银魂";
+		My.variable.photoSpeciesData[3][18]="刀剑神域";
+		My.variable.photoSpeciesData[4][0]="藏剑";
+		My.variable.photoSpeciesData[4][1]="天策";
+		My.variable.photoSpeciesData[4][2]="万花";
+		My.variable.photoSpeciesData[4][3]="毒姐";
+		My.variable.photoSpeciesData[4][4]="秀萝";
+		My.variable.photoSpeciesData[4][5]="和尚";
+		My.variable.photoSpeciesData[4][6]="七秀";
+		My.variable.photoSpeciesData[4][7]="二小姐";
 	}
 	function getWindowHeight(){
         	var url=evt.getStyle(wrap).backgroundImage;
@@ -266,9 +272,9 @@
 	        var lastStringUrl=url.slice(url.search(myRegExp));
 		//wrap.style.height="900px";
 		$("#wrap").css("height","900px");
-		$("#wrap").css("width",evt.getStyle(documentTop).width);
+		$("#wrap").css("width",evt.getStyle(My.variable.documentTop).width);
 		var i=0;
-		wrap.timer=setInterval(function(){
+		My.variable.wrap.timer=setInterval(function(){
 			var wrapBackgroud=[];
 		            wrapBackgroud[0]="bz0";
 		            wrapBackgroud[1]="bz1";
@@ -287,23 +293,23 @@
 		var ele=evt.getTarget(e);
 		evt.preventDefault(e);
 		var i = evt.getChildrenIndex(ele);
-		logo_span[logo_number].className="";
+		My.variable.logoSpan[My.variable.logoNumber].className="";
 		ele.className="logo_main_visited";
-		main_list[logo_number].className="mainlist_item";
-		main_list[i].className="mainlist_item_show";
-		logo_number=i;
+		My.variable.mainList[My.variable.logoNumber].className="mainlist_item";
+		My.variable.mainList[i].className="mainlist_item_show";
+		My.variable.logoNumber=i;
 
-		switch(logo_number){
+		switch(My.variable.logoNumber){
 			case (0):
-				video.pause();
+				My.variable.video.pause();
 				break;
 			case (1):
 				break;
 			case (2):
-				video.pause();
+				My.variable.video.pause();
 				break;
 			case (3):
-				video.pause();
+				My.variable.video.pause();
 				break;
 			};		
 	}
@@ -312,11 +318,11 @@
 		evt.stopBubble(e);
 		var elePhotoName=evt.getTarget(e).innerHTML;
 		var pixBoxImg=$("#pixBox_li>>img");
-		production.style.display="block";
+		My.variable.production.style.display="block";
 		var x,y;
-		for (i=0;i<photoSpecies_data.length;i++){
-			for(j=0;j<photoSpecies_data[i].length;j++){
-				if(elePhotoName==photoSpecies_data[i][j]){
+		for (i=0;i<My.variable.photoSpeciesData.length;i++){
+			for(j=0;j<My.variable.photoSpeciesData[i].length;j++){
+				if(elePhotoName==My.variable.photoSpeciesData[i][j]){
 					x=i;
 					y=j;
 					break;
@@ -337,27 +343,27 @@
 		if (ele.nodeName=="DT"){
 			return;
 		}
-	        var dt=photoSpecies_species.getElementsByTagName("dt");
+	        var dt=My.variable.photoSpecies_species.getElementsByTagName("dt");
 		var j=dt.length;
 		if (j!=0){
 			for(i=j-1;i>=0;i--){
-				photoSpecies_species.removeChild(dt[i]);
+				My.variable.photoSpecies_species.removeChild(dt[i]);
 			}
 		}
 		var i = evt.getChildrenIndex(ele);
-		ele=photoSpecies_species.getElementsByTagName("a");
+		ele=My.variable.photoSpecies_species.getElementsByTagName("a");
 		//var value=ele[i].innerHTML;
-		var len =Math.ceil(photoSpecies_data[i].length/3);
+		var len =Math.ceil(My.variable.photoSpeciesData[i].length/3);
 		for(k=0;k<len;k++){
 			var dt = document.createElement("dt");
 			if(k==len-1)
 				dt.style.borderBottom="#5aa1fe solid 1px";
-			photoSpecies_species.appendChild(dt);
+			My.variable.photoSpecies_species.appendChild(dt);
 			for(j=0;j<3;j++){
 				var a = document.createElement("a");
 				a.setAttribute("href","#");
-				if (k*3+j<photoSpecies_data[i].length){
-					a.innerHTML=photoSpecies_data[i][k*3+j];
+				if (k*3+j<My.variable.photoSpeciesData[i].length){
+					a.innerHTML=My.variable.photoSpeciesData[i][k*3+j];
 					dt.appendChild(a);
 				}
 				evt.addListener(a,"click",changePicBox);
@@ -370,11 +376,11 @@
 		if(ele.nodeName!="DIV"){
 			return;
 		}
-		var dt=photoSpecies_species.getElementsByTagName("dt");
+		var dt=My.variable.photoSpecies_species.getElementsByTagName("dt");
 		var j=dt.length;
 		if (j!=0){
 			for(i=j-1;i>=0;i--){
-				photoSpecies_species.removeChild(dt[i]);
+				My.variable.photoSpecies_species.removeChild(dt[i]);
 			}
 		}
 	}
@@ -385,13 +391,13 @@
 		var bottomMove;
 		if(ele.nodeName=="IMG" || ele.nodeName=="H2" || ele.nodeName=="P" ){
 			i=evt.getChildrenIndex(ele.parentNode.parentNode.parentNode);
-			instrumentFlag=i;
+			My.variable.instrumentFlag=i;
 			bottoMove={width:800};
-			startMove(instrument_left[i],bottoMove);
+			startMove(My.variable.instrumentLeft[i],bottoMove);
 		}else if(ele.nodeName=="DIV"){
 			i=evt.getChildrenIndex(ele);
 			bottoMove={width:201};
-			startMove(instrument_left[instrumentFlag],bottoMove);			
+			startMove(My.variable.instrumentLeft[My.variable.instrumentFlag],bottoMove);			
 		}else
 			return;
 	}
